@@ -1,0 +1,33 @@
+import numpy as np
+import random as rnd
+
+def ridge_regression(A, b, alpha, x):
+    # Begin with simple OLS minimization
+    ols_term = np.linalg.norm(np.dot(A, x) - b)
+
+    # Add the regularization term
+    regularization = np.linarg.norm(alpha * x)
+
+    return ols_term + regularization
+
+def find_best_fit():
+    # Create values for A and b
+    A = np.matrix(...)
+    b = np.matrix(...)
+
+    # Use a moderate value for alpha
+    alpha = 3.0
+
+    # Find value of x that minimizes ridge regression error
+    min_error = float("inf")
+    min_x = np.zeros(...)
+
+    for i in range(1000):
+        x = np.random.rand(...)
+
+        error = ridge_regression(A, b, alpha, x)
+        if error < min_error:
+            min_error = error
+            min_x = x
+
+    return min_x
